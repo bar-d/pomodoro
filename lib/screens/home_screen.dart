@@ -16,6 +16,12 @@ class _HomeScreenState extends State<HomeScreen> {
   int totalPomodoros = 0;
   late Timer timer;
 
+  String format(int seconds) {
+    var dutration = Duration(seconds: seconds);
+
+    return dutration.toString().split(".").first.substring(2, 7);
+  }
+
   void onTick(Timer timer) {
     if (totalSeconds == 0) {
       setState(() {
@@ -59,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               alignment: Alignment.bottomCenter,
               child: Text(
-                "$totalSeconds",
+                format(totalSeconds),
                 style: TextStyle(
                   color: Theme.of(context).cardColor,
                   fontSize: 89,
