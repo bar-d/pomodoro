@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pmodoro/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,9 +23,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: const Color(0xFFE7626C),
         ),
       ),
-      home: const Scaffold(
-        body: Center(),
-      ),
+      home: const HomeScreen(),
     );
   }
 }
